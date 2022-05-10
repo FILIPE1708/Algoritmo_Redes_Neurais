@@ -1,12 +1,13 @@
 from keras.models import load_model
+import numpy as np
 
 modelo = load_model('modelo.h5')
 
-novosDados = [
+novosDados = np.array([
     [3.1, 122],
     [4.1, 146],
     [2.2, 86]
-]
+])
 
 resultado = modelo.predict(novosDados)
 for i in range(len(resultado)):
